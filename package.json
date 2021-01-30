@@ -1,5 +1,5 @@
 {
-  "name": "DappFarming",
+  "name": "dappfarming",
   "version": "0.1.0",
   "description": "DappFarming",
   "dependencies": {
@@ -35,5 +35,17 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "main": "truffle-config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pyot/DappFarming.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pyot/DappFarming/issues"
+  },
+  "homepage": "https://github.com/Pyot/DappFarming#readme",
+  "devDependencies": {}
 }
