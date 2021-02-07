@@ -34,12 +34,24 @@ contract TokenFarm {
         hasStaked[msg.sender] = true;
     }
 
-    function issueToken() public {
+    function unstakeTokens() public {
+        uint256 balance = stakingBalance[msg.sender];
+
+        require(balance > 0, "staking balance cannot be 0");
+
+        daiToken.transfer(msg.sender, balance);
+
+        stakingBalance[msg.sender] = 0;
+
+        isStaking[msg.sender] = false;
+    }
+
+    function issueTokens() public {
         require(msg.sender == owner, "caller need to be owner");
         for (uint256 i = 0; i < stakers.length; i++) {
             address recipient = stakers[i];
             uint256 balance = stakingBalance[recipient];
-            dappToken.transfer(recipient, balance);
+
             if (balance > 0) {
                 dappToken.transfer(recipient, balance);
             }
